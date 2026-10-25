@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Welcome Surprise for Lavanya</title>
+    <style>
+        :root {
+            --primary: #8C2D19;
+            --bg: #FFFDF9;
+            --text: #2C2C2C;
+            --gold: #D4AF37;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Falling Petals Background Animation */
+        .petals-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .petal {
+            position: absolute;
+            background-color: rgba(212, 45, 45, 0.2);
+            border-radius: 150% 0 150% 150%;
+            animation: fadeAnimation 10s infinite linear;
+        }
+
+        @keyframes fadeAnimation {
+            0% { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translate(100px, 100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* YouTube Video Container for Mobile Responsiveness */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .message {
+            line-height: 1.6;
+            font-size: 1.05rem;
+            text-align: left;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+
+        .garden-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* The 22 Flowers Tag Cloud */
+        .flower-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            z-index: 2;
+            max-width: 500px;
+        }
+
+        .flower-tag {
+            background: rgba(140, 45, 25, 0.06);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(140, 45, 25, 0.1);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Petals Layer -->
+    <div class="petals-container" id="petals"></div>
+
+    <div class="card">
+        <h1>Welcome to Avar Hotel, Lavanya</h1>
+        <p class="subtitle">Press play to listen while you read...</p>
+
+        <!-- YouTube Embedded Player (A1 - Like a Rose Official Video) -->
+        <div class="video-container">
+            <iframe 
+                src="https://youtube.com" 
+                title="A1 - Like a Rose" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="message">
+            Dear Lavanya,
+
+            I know you’ve had a long day of work and travel, so I wanted to make sure something beautiful was waiting for you the very moment you walked into your room. 
+
+            Since I couldn't physically bring the incredible bouquet of 22 flowers you lovingly hand-crocheted for me across the miles, I asked the team here to bring a piece of that unique garden to life for you tonight. 
+
+            Every leaf and petal waiting in your room is a reflection of the beautiful items you crafted—a token of love bridging the distance between Bangalore and Mátrafüred. 
+
+            You are my favorite view, always. Rest well, enjoy the wellness spa, and know that I am right there with you.
+
+            All my love,
+            Mukunth
+        </div>
+
+        <div class="garden-title">Our Stitched Garden</div>
+    </div>
+
+    <!-- The 22 Stems Display -->
+    <div class="flower-grid">
+        <span class="flower-tag">🌹 Red Rose</span>
+        <span class="flower-tag">🤍 White Rose</span>
+        <span class="flower-tag">🌻 Sunflower</span>
+        <span class="flower-tag">🪻 Lavender</span>
+        <span class="flower-tag">💮 Pink Carnation</span>
+        <span class="flower-tag">🔔 Lily of the Valley</span>
+        <span class="flower-tag">💎 Forget-Me-Not</span>
+        <span class="flower-tag">🧡 Orange Lily</span>
+        <span class="flower-tag">🌼 Daisy</span>
+        <span class="flower-tag">🌷 Pink Tulip</span>
+        <span class="flower-tag">🪷 Lotus</span>
+        <span class="flower-tag">🌱 Jasmine</span>
+        <span class="flower-tag">🩵 Blue Hydrangea</span>
+        <span class="flower-tag">🌸 Peony</span>
+        <span class="flower-tag">🪴 Orchid</span>
+        <span class="flower-tag">🍒 Cherry Blossom</span>
+        <span class="flower-tag">🌺 Pink Hibiscus</span>
+        <span class="flower-tag">🪐 Cosmos</span>
+        <span class="flower-tag">🏵️ Marigold</span>
+        <span class="flower-tag">🌿 Camellia</span>
+        <span class="flower-tag">🌾 Baby's Breath</span>
+        <span class="flower-tag">💜 Iris</span>
+    </div>
+
+    <script>
+        // Generating random falling petals dynamically
+        const container = document.getElementById('petals');
+        const petalCount = 15;
+        
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.width = Math.random() * 12 + 8 + 'px';
+            petal.style.height = Math.random() * 16 + 10 + 'px';
+            petal.style.animationDelay = Math.random() * 8 + 's';
+            petal.style.animationDuration = Math.random() * 6 + 6 + 's';
+            container.appendChild(petal);
+        }
+    </script>
+</body>
+</html>
